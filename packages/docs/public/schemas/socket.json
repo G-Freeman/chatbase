@@ -1,0 +1,238 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Betting API (WebSocket)",
+    "version": "1.0.0",
+    "description": "Документация действий WebSocket клиента/сервера, сгенерированная автоматически из исходного кода."
+  },
+  "servers": [
+    {
+      "url": "wss://newmax.x1b.info/wsnew/",
+      "description": "Основное WebSocket подключение"
+    }
+  ],
+  "paths": {
+    "/ws/messages/open": {
+      "get": {
+        "tags": [
+          "WebSocket Events"
+        ],
+        "summary": "Сообщение «open»",
+        "operationId": "onOpen",
+        "responses": {},
+        "x-hideTryItPanel": true
+      }
+    },
+    "/ws/messages/message": {
+      "get": {
+        "tags": [
+          "WebSocket Events"
+        ],
+        "summary": "Сообщение «message»",
+        "operationId": "onMessage",
+        "responses": {},
+        "x-hideTryItPanel": true
+      }
+    },
+    "/ws/messages/close": {
+      "get": {
+        "tags": [
+          "WebSocket Events"
+        ],
+        "summary": "Сообщение «close»",
+        "operationId": "onClose",
+        "responses": {},
+        "x-hideTryItPanel": true
+      }
+    },
+    "/ws/messages/error": {
+      "get": {
+        "tags": [
+          "WebSocket Events"
+        ],
+        "summary": "Сообщение «error»",
+        "operationId": "onError",
+        "responses": {},
+        "x-hideTryItPanel": true
+      }
+    },
+    "/ws/messages/connect": {
+      "get": {
+        "tags": [
+          "WebSocket Events"
+        ],
+        "summary": "Сообщение «connect»",
+        "description": "Сообщение «connect»",
+        "operationId": "onConnect",
+        "responses": {},
+        "x-hideTryItPanel": true
+      }
+    },
+    "/ws/messages/ping": {
+      "get": {
+        "tags": [
+          "WebSocket Events"
+        ],
+        "summary": "Сообщение «ping»",
+        "description": "Сообщение «ping»",
+        "operationId": "onPing",
+        "responses": {},
+        "x-hideTryItPanel": true
+      }
+    },
+    "/ws/messages/pong": {
+      "get": {
+        "tags": [
+          "WebSocket Events"
+        ],
+        "summary": "Сообщение «pong»",
+        "description": "Сообщение «pong»",
+        "operationId": "onPong",
+        "responses": {},
+        "x-hideTryItPanel": true
+      }
+    },
+    "/ws/send/testUser": {
+      "post": {
+        "tags": [
+          "WebSocket Send"
+        ],
+        "summary": "Отправка сообщения «testUser»",
+        "operationId": "sendTestUser",
+        "description": "Отправка сообщения «testUser»",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "action": {
+                    "type": "string",
+                    "enum": [
+                      "testUser"
+                    ]
+                  },
+                  "user": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                },
+                "required": [
+                  "action",
+                  "user"
+                ]
+              },
+              "example": {
+                "action": "testUser",
+                "user": {
+                  "id": 1,
+                  "name": "testUser",
+                  "email": ""
+                }
+              }
+            }
+          }
+        },
+        "responses": {},
+        "x-codeSamples": [
+          {
+            "lang": "WebSocket",
+            "label": "WebSocket",
+            "source": "ws.send({\n  \"action\": \"testUser\",\n  \"user\": {\n    \"id\": 1,\n    \"name\": \"testUser\",\n    \"email\": \"\"\n  }\n});"
+          }
+        ],
+        "x-codeSamplesLock": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ]
+      },
+      "Message": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "from": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "ts": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "from",
+          "text",
+          "ts"
+        ]
+      },
+      "WSOptions": {
+        "type": "object",
+        "properties": {
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "reconnect": {
+            "type": "boolean"
+          }
+        }
+      },
+      "WSMessage": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "data": {},
+          "marker": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "action",
+          "data"
+        ]
+      },
+      "TestType": {
+        "type": "object",
+        "properties": {
+          "param": {
+            "type": "string"
+          },
+          "param2": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "param",
+          "param2"
+        ]
+      }
+    }
+  }
+}

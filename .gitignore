@@ -1,0 +1,5 @@
+/node_modules/
+/.idea/
+/packages/generators/out/api.ts
+/packages/api/node_modules/
+/packages/docs/node_modules/

@@ -1,0 +1,45 @@
+{
+	"name": "personal",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"packageManager": "pnpm@9.12.3",
+	"scripts": {
+		"dev": "vite --host",
+		"build": "vite build",
+		"preview": "vite preview",
+		"lint": "eslint . --ext .ts,.tsx",
+		"codex": "codex -a never -s workspace-write"
+	},
+	"dependencies": {
+		"effector": "^23.4.2",
+		"effector-react": "^23.3.0",
+		"html2canvas": "^1.4.1",
+		"react": "^19.1.1",
+		"react-dom": "^19.1.1",
+		"react-router-dom": "^7.8.2"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.33.0",
+		"@types/node": "^24.3.1",
+		"@types/react": "^19.1.10",
+		"@types/react-dom": "^19.1.7",
+		"@typescript-eslint/eslint-plugin": "^8.42.0",
+		"@typescript-eslint/parser": "^8.42.0",
+		"@vitejs/plugin-react": "^5.0.0",
+		"autoprefixer": "^10.4.21",
+		"eslint": "^9.35.0",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-jsx-a11y": "^6.10.2",
+		"eslint-plugin-react": "^7.37.5",
+		"eslint-plugin-react-hooks": "^5.2.0",
+		"eslint-plugin-react-refresh": "^0.4.20",
+		"globals": "^16.3.0",
+		"postcss": "^8.5.6",
+		"prettier": "^3.6.2",
+		"tailwindcss": "^3.4.17",
+		"typescript": "~5.8.3",
+		"typescript-eslint": "^8.39.1",
+		"vite": "^7.1.2"
+	}
+}

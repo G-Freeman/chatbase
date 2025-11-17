@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"module": "CommonJS",
+		"target": "ES2020",
+		"moduleResolution": "node",
+		"types": ["node"],
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"outDir": "./dist"
+	},
+	"include": [
+		"generators/**/*.ts",
+		"types/**/*.ts"
+	]
+}

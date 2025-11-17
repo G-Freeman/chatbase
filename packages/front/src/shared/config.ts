@@ -1,0 +1,1 @@
+export const TEXTURE_SCALE_MULTIPLIER = 2
